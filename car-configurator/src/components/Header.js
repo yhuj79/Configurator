@@ -42,7 +42,7 @@ const HeaderDiv = styled.div`
   background-color: black;
   color: white;
   font-size: 20px;
-  padding: 10px 0 10px;
+  padding: 10px 0 10px 5px;
   letter-spacing: 1px;
   font-family: "Courier New", "Courier", "monospace";
 
@@ -54,5 +54,4 @@ const HeaderDiv = styled.div`
     filter: brightness(250%);
   }
 `;
-
 export default Header;
