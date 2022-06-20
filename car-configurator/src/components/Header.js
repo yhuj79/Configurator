@@ -7,13 +7,14 @@ import LanguageIcon from "@mui/icons-material/Language";
 
 function Header() {
   const iconStyle = {
-    margin: "30px 35px 0",
+    fontSize: "30px",
+    margin: "30px 40px 0",
     color: "white",
   };
 
   return (
     <HeaderDiv>
-      <div>
+      <div className="header-icon">
         <MenuIcon sx={iconStyle} />
         <InsertPhotoIcon sx={iconStyle} />
       </div>
@@ -21,7 +22,7 @@ function Header() {
         <img className="header-img" alt="" src={Logo} />
         <p>Mercedes-Benz</p>
       </div>
-      <div>
+      <div className="header-icon">
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -42,16 +43,35 @@ const HeaderDiv = styled.div`
   background-color: black;
   color: white;
   font-size: 20px;
-  padding: 10px 0 10px 5px;
+  padding: 30px 0 30px 5px;
   letter-spacing: 1px;
   font-family: "Courier New", "Courier", "monospace";
 
   .header-logo {
     text-align: center;
+    opacity: 0;
+    animation: AppearNormal 0.7s;
+    animation-delay: 0.7s;
+    animation-fill-mode: forwards;
   }
   .header-img {
     width: 60px;
     filter: brightness(250%);
+  }
+  .header-icon {
+    opacity: 0;
+    animation: AppearNormal 0.7s;
+    animation-delay: 3.5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes AppearNormal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
 export default Header;

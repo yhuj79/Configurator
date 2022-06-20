@@ -20,17 +20,23 @@ function MainImage() {
   );
 }
 const MainImageDiv = styled.div`
-  width: 90%;
+  width: 80%;
   margin: auto;
 
-  .main-img1, .main-img2, .main-img3, .main-img4 {
+  .main-img1,
+  .main-img2,
+  .main-img3,
+  .main-img4 {
     width: 50%;
     margin-bottom: 16px;
     margin-left: -6px;
     margin-right: 24px;
+    opacity: 0;
+    animation: AppearSmooth 1.2s;
+    animation-fill-mode: forwards;
   }
 
-  @keyframes smoothAppear {
+  @keyframes AppearSmooth {
     from {
       opacity: 0;
       transform: translateY(-5%);
@@ -40,18 +46,18 @@ const MainImageDiv = styled.div`
       transform: translateY(0);
     }
   }
-  
+
   .main-img1 {
-    animation: smoothAppear 1s;
+    animation-delay: 1.5s;
   }
   .main-img2 {
-    animation: smoothAppear 4s;
+    animation-delay: 2s;
   }
   .main-img3 {
-    animation: smoothAppear 7s;
+    animation-delay: 2.5s;
   }
   .main-img4 {
-    animation: smoothAppear 10s;
+    animation-delay: 3s;
   }
 `;
 export default MainImage;
