@@ -2,13 +2,13 @@
 import "./App.css";
 
 import Header from "./components/Header";
-import MainImage from "./components/MainImage";
+import MainContent from "./components/MainContent";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <MainImage />
+      <MainContent />
       
       <h1>1 헤더</h1>
       <h1>2 메인사진</h1>
