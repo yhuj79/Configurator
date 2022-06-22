@@ -37,6 +37,10 @@ function Header() {
 }
 
 const HeaderDiv = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
   display: flex;
   justify-content: space-around;
   font-weight: lighter;
