@@ -4,6 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LanguageIcon from "@mui/icons-material/Language";
+import { Link } from "react-router-dom";
 
 function Header() {
   const iconStyle = {
@@ -18,10 +19,10 @@ function Header() {
         <MenuIcon sx={iconStyle} />
         <InsertPhotoIcon sx={iconStyle} />
       </div>
-      <div className="header-logo">
+      <Link to="/" className="header-logo">
         <img className="header-img" alt="" src={Logo} />
         <p>Mercedes-Benz</p>
-      </div>
+      </Link>
       <div className="header-icon">
         <a
           target="_blank"
@@ -52,6 +53,8 @@ const HeaderDiv = styled.div`
   font-family: "Courier New", "Courier", "monospace";
 
   .header-logo {
+    text-decoration: none;
+    color: white;
     text-align: center;
     opacity: 0;
     animation: AppearNormal 0.7s;

@@ -36,6 +36,7 @@ function MainContent() {
 const MainContentDiv = styled.div`
   width: 80%;
   margin: auto;
+  overflow-x: hidden;
 
   .main-container {
     display: flex;
