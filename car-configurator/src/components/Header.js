@@ -56,19 +56,19 @@ const HeaderDiv = styled.div`
     text-decoration: none;
     color: white;
     text-align: center;
-    /* opacity: 0;
+    opacity: 0;
     animation: AppearNormal 0.7s;
-    animation-delay: 0.7s;
-    animation-fill-mode: forwards; */
+    animation-delay: 1.3s;
+    animation-fill-mode: forwards;
   }
   .header-img {
     width: 60px;
     filter: brightness(250%);
   }
-  /* .header-icon {
+  .header-icon {
     opacity: 0;
     animation: AppearNormal 0.7s;
-    animation-delay: 3.5s;
+    animation-delay: 1.3s;
     animation-fill-mode: forwards;
   }
 
@@ -79,6 +79,6 @@ const HeaderDiv = styled.div`
     to {
       opacity: 1;
     }
-  } */
+  }
 `;
 export default Header;
