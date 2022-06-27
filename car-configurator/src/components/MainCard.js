@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SettingsIcon from "@mui/icons-material/Settings";
 
-function MainCard({ image, name, animationDelay }) {
+function MainCard({ image, name, animationDelay, route }) {
   const [delay, setDelay] = useState("delay-loaded");
-  setTimeout(() => setDelay("card-configure-button"), 1700);
+  setTimeout(() => setDelay("card-configure-button"), 2000);
 
   return (
     <MainCardDiv style={{ animationDelay: `${animationDelay}s` }}>
       <img className="card-img" alt="" src={image} />
-      <Link to={"/test"} className={delay}>
+      <Link to={`/${route}`} className={delay}>
           <SettingsIcon /> Configure
       </Link>
       <div className="card-text-section">
@@ -60,7 +60,7 @@ const MainCardDiv = styled.div`
     text-shadow: 1px 1px 1px black;
     opacity: 0;
     animation: AppearSmooth 1.2s;
-    animation-delay: 1.3s;
+    animation-delay: 1.6s;
     animation-fill-mode: forwards;
     transition: all 0.3s;
   }

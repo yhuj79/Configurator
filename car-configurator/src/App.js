@@ -1,11 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// import styled from "styled-components";
 import "./App.css";
 
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
-import Test from "./components/Test";
+
+import CClass from "./configure/CClass";
+// import Amg from "./configure/Amg";
+// import ClaClass from "./configure/ClaClass";
+// import SClass from "./configure/SClass";
 
 function App() {
   return (
@@ -14,7 +17,12 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<MainContent />} />
-          <Route path="/test" element={<Test />} />
+
+          {/* Configure */}
+          <Route path="/cclass" element={<CClass />} />
+          {/* <Route path="/amg" element={<Amg />} />
+          <Route path="/claclass" element={<ClaClass />} />
+          <Route path="/sclass" element={<SClass />} /> */}
         </Routes>
       </Router>
     </div>

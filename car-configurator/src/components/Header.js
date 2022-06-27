@@ -57,8 +57,8 @@ const HeaderDiv = styled.div`
     color: white;
     text-align: center;
     opacity: 0;
-    animation: AppearNormal 0.7s;
-    animation-delay: 1.3s;
+    animation: AppearNormal 1.2s;
+    animation-delay: 1.6s;
     animation-fill-mode: forwards;
   }
   .header-img {
@@ -67,8 +67,8 @@ const HeaderDiv = styled.div`
   }
   .header-icon {
     opacity: 0;
-    animation: AppearNormal 0.7s;
-    animation-delay: 1.3s;
+    animation: AppearNormal 1.2s;
+    animation-delay: 1.6s;
     animation-fill-mode: forwards;
   }
 
