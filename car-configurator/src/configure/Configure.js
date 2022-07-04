@@ -2,37 +2,25 @@ import styled from "styled-components";
 import { useState, useRef } from "react";
 
 function Configure({ name }) {
-  const scrollRef = useRef(null);
+  const imgRef = useRef(null);
   const [isDrag, setIsDrag] = useState(false);
   const [startX, setStartX] = useState();
   const [degree, setDegree] = useState(1);
+  const [throttle, setThrottle] = useState(0);
 
-  const onDragStart = (e) => {
+  function onDragStart(e) {
     e.preventDefault();
     setIsDrag(true);
-    setStartX(e.pageX + scrollRef.current.scrollLeft);
-  };
+    setStartX(e.pageX + imgRef.current.scrollLeft);
+  }
 
-  const onDragEnd = () => {
+  function onDragEnd() {
     setIsDrag(false);
-  };
+  }
 
-  const throttle = (func, ms) => {
-    let throttled = false;
-    return (...args) => {
-      if (!throttled) {
-        throttled = true;
-        setTimeout(() => {
-          func(...args);
-          throttled = false;
-        }, ms);
-      }
-    };
-  };
-
-  const onDragMove = (e) => {
+  function onDragMove(e) {
     if (isDrag) {
-      const { scrollWidth, clientWidth, scrollLeft } = scrollRef.current;
+      const { scrollWidth, clientWidth, scrollLeft } = imgRef.current;
 
       if (scrollLeft === 0) {
         setStartX(e.pageX);
@@ -41,15 +29,35 @@ function Configure({ name }) {
       }
 
       if (startX - e.pageX > 0) {
-        degree === 36 ? setDegree(1) : setDegree(degree + 1);
+        setThrottle(0);
+        degreeLeft();
       } else if (startX - e.pageX < 0) {
-        degree === 1 ? setDegree(36) : setDegree(degree - 1);
+        setThrottle(0);
+        degreeRight();
       }
     }
-  };
+  }
 
-  const delay = 60;
-  const onThrottleDragMove = throttle(onDragMove, delay);
+  function degreeLeft() {
+    setThrottle(throttle + 1);
+    if (throttle === 20) {
+      degree === 36 ? setDegree(1) : setDegree(degree + 1);
+      setThrottle(0);
+    }
+    else {
+      setDegree(degree);
+    }
+  }
+  function degreeRight() {
+    setThrottle(throttle + 1);
+    if (throttle === 20) {
+      degree === 1 ? setDegree(36) : setDegree(degree - 1);
+      setThrottle(0);
+    }
+    else {
+      setDegree(degree);
+    }
+  }
 
   return (
     <ConfigureDiv>
@@ -76,10 +84,10 @@ function Configure({ name }) {
         <h1>{name} [ TEST ]</h1>
         <img
           onMouseDown={onDragStart}
-          onMouseMove={onThrottleDragMove}
+          onMouseMove={onDragMove}
           onMouseUp={onDragEnd}
           onMouseLeave={onDragEnd}
-          ref={scrollRef}
+          ref={imgRef}
           className="configure-img"
           alt=""
           src={require(`./img/${name}/${name}${degree}.webp`)}
