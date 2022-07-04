@@ -8,6 +8,9 @@ function Configure({ name }) {
   const [degree, setDegree] = useState(1);
   const [throttle, setThrottle] = useState(0);
 
+  const [color, setColor] = useState("polawhite");
+  const [wheel, setWheel] = useState("20alloy");
+
   function onDragStart(e) {
     e.preventDefault();
     setIsDrag(true);
@@ -40,21 +43,19 @@ function Configure({ name }) {
 
   function degreeLeft() {
     setThrottle(throttle + 1);
-    if (throttle === 20) {
+    if (throttle === 10) {
       degree === 36 ? setDegree(1) : setDegree(degree + 1);
       setThrottle(0);
-    }
-    else {
+    } else {
       setDegree(degree);
     }
   }
   function degreeRight() {
     setThrottle(throttle + 1);
-    if (throttle === 20) {
+    if (throttle === 10) {
       degree === 1 ? setDegree(36) : setDegree(degree - 1);
       setThrottle(0);
-    }
-    else {
+    } else {
       setDegree(degree);
     }
   }
@@ -64,24 +65,66 @@ function Configure({ name }) {
       <div className="configure-option-section">
         <h1>옵션</h1>
         <div>
-          <h2>color</h2>
+          <h2>V8 스타일 팩</h2>
           <div>
-            <p>color 1</p>
-            <p>color 2</p>
-            <p>color 3</p>
+            <p className="configure-option-button"></p>
           </div>
         </div>
         <div>
-          <h2>wheel</h2>
+          <h2>Color</h2>
           <div>
-            <p>wheel 1</p>
-            <p>wheel 2</p>
-            <p>wheel 3</p>
+            <p
+              className="configure-option-button"
+              onClick={() => {
+                setColor("polawhite");
+              }}
+            >
+              Pola White
+            </p>
+            <p
+              className="configure-option-button"
+              onClick={() => {
+                setColor("black");
+              }}
+            >
+              Obsidian Black
+            </p>
+            <p
+              className="configure-option-button"
+              onClick={() => {
+                setColor("orange");
+              }}
+            >
+              Orange
+            </p>
+          </div>
+        </div>
+        <div>
+          <h2>Wheel</h2>
+          <div>
+            <p
+              className="configure-option-button"
+              onClick={() => {
+                setWheel("20alloy");
+              }}
+            >
+              20인치 AMG 5트윈 스포크 경량 알로이 휠
+            </p>
+            <p
+              className="configure-option-button"
+              onClick={() => {
+                setWheel("20multialloy");
+              }}
+            >
+              20인치 AMG 멀티 스포크 경량 알로이 휠
+            </p>
           </div>
         </div>
       </div>
       <div className="configure-img-section">
-        <h1>{name} [ TEST ]</h1>
+        <h1>TEST</h1>
+        <h1>amg-black-20multialloy-</h1>
+        {/* <h1>{name} [ TEST ]</h1> */}
         <img
           onMouseDown={onDragStart}
           onMouseMove={onDragMove}
@@ -90,7 +133,7 @@ function Configure({ name }) {
           ref={imgRef}
           className="configure-img"
           alt=""
-          src={require(`./img/${name}/${name}${degree}.webp`)}
+          src={require(`./file/${name}/${name}-${color}-${wheel}-${degree}.webp`)}
         />
       </div>
     </ConfigureDiv>
@@ -103,10 +146,17 @@ const ConfigureDiv = styled.div`
   font-size: 20px;
 
   .configure-option-section {
-    width: 10%;
+    width: 15%;
+    margin-right: 35px;
+  }
+  .configure-option-button {
+    background-color: gray;
+    border: 2px solid white;
+    border-radius: 7px;
+    padding: 20px;
   }
   .configure-img-section {
-    width: 90%;
+    width: 85%;
   }
   .configure-img {
     width: 100%;
