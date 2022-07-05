@@ -8,6 +8,7 @@ function Configure({ name }) {
   const [degree, setDegree] = useState(1);
   const [throttle, setThrottle] = useState(0);
 
+  const [pack, setPack] = useState("nsp");
   const [color, setColor] = useState("polawhite");
   const [wheel, setWheel] = useState("20alloy");
 
@@ -67,7 +68,22 @@ function Configure({ name }) {
         <div>
           <h2>V8 스타일 팩</h2>
           <div>
-            <p className="configure-option-button"></p>
+            <p
+              className="configure-option-button"
+              onClick={() => {
+                setPack("sp");
+              }}
+            >
+              YES
+            </p>
+            <p
+              className="configure-option-button"
+              onClick={() => {
+                setPack("nsp");
+              }}
+            >
+              NO
+            </p>
           </div>
         </div>
         <div>
@@ -123,7 +139,7 @@ function Configure({ name }) {
       </div>
       <div className="configure-img-section">
         <h1>TEST</h1>
-        <h1>amg-black-20multialloy-</h1>
+        <h1>amg-sp-polawhite-20multialloy-</h1>
         {/* <h1>{name} [ TEST ]</h1> */}
         <img
           onMouseDown={onDragStart}
@@ -133,7 +149,7 @@ function Configure({ name }) {
           ref={imgRef}
           className="configure-img"
           alt=""
-          src={require(`./file/${name}/${name}-${color}-${wheel}-${degree}.webp`)}
+          src={require(`./file/${name}/${name}-${pack}-${color}-${wheel}-${degree}.webp`)}
         />
       </div>
     </ConfigureDiv>

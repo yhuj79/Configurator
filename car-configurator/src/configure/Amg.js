@@ -1,4 +1,3 @@
-import React from "react";
 import Configure from "./Configure";
 
 function Amg() {

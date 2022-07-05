@@ -1,8 +1,29 @@
-import React from "react";
-import Configure from "./Configure";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+// import Configure from "./Configure";
 
 function CClass() {
-  return <Configure name="cclass" />;
+  // return <Configure name="cclass" />;
+  return (
+    <TestDiv>
+      <h1>준비중입니다!</h1>
+      <br />
+      <Link to={"/"} style={{ padding: "30px" }}>
+        <button className="btn">홈으로 이동</button>
+      </Link>
+    </TestDiv>
+  );
 }
+const TestDiv = styled.div`
+  margin: 100px;
 
+  .btn {
+    margin-left: -25px;
+    padding: 20px;
+    font-size: 20px;
+  }
+  .btn:hover {
+    opacity: 0.7;
+  }
+`;
 export default CClass;
