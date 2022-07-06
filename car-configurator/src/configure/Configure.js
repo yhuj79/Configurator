@@ -40,7 +40,7 @@ function Configure({ name, pack, color, wheel }) {
 
   function degreeLeft() {
     setThrottle(throttle + 1);
-    if (throttle === 10) {
+    if (throttle === 15) {
       degree === 36 ? setDegree(1) : setDegree(degree + 1);
       setThrottle(0);
     } else {
@@ -49,7 +49,7 @@ function Configure({ name, pack, color, wheel }) {
   }
   function degreeRight() {
     setThrottle(throttle + 1);
-    if (throttle === 10) {
+    if (throttle === 15) {
       degree === 1 ? setDegree(36) : setDegree(degree - 1);
       setThrottle(0);
     } else {
@@ -58,33 +58,54 @@ function Configure({ name, pack, color, wheel }) {
   }
 
   return (
-    <ConfigureDiv>
-      <h1>TEST</h1>
-      <h1>amg-sp-polawhite-20multialloy-</h1>
-      <img
-        className="configure-img"
-        alt=""
-        ref={imgRef}
-        onMouseDown={onDragStart}
-        onMouseMove={onDragMove}
-        onMouseUp={onDragEnd}
-        onMouseLeave={onDragEnd}
-        src={require(`./file/${name}/${name}-${pack}-${color}-${wheel}-${degree}.webp`)}
-      />
+    <ConfigureDiv
+      style={{
+        backgroundImage: `url(${require("./file/CarBackground.jpeg")})`,
+      }}
+    >
+      {/* // <ConfigureDiv> */}
+      <h1 className="configure-img-title">Mercedes-AMG GT 43 4MATIC+</h1>
+      <div className="configure-img-div">
+        <img
+          className="configure-img"
+          alt=""
+          ref={imgRef}
+          onMouseDown={onDragStart}
+          onMouseMove={onDragMove}
+          onMouseUp={onDragEnd}
+          onMouseLeave={onDragEnd}
+          src={require(`./file/${name}/${name}-${pack}-${color}-${wheel}-${degree}.webp`)}
+        />
+        <img
+          className="configure-img-slider-stage"
+          alt=""
+          src={require(`./file/CarSliderStage.png`)}
+        />
+      </div>
     </ConfigureDiv>
   );
 }
 const ConfigureDiv = styled.div`
-  width: 85%;
+  width: 100%;
+  margin: auto;
+  background-size: cover;
+  border-radius: 15px;
 
-  .configure-option-button {
-    background-color: gray;
-    border: 2px solid white;
-    border-radius: 7px;
-    padding: 20px;
+  .configure-img-title {
+    margin: 15px 40px 0;
+  }
+  .configure-img-div {
+    position: relative;
+    margin-top: 80px;
   }
   .configure-img {
+    position: absolute;
     width: 100%;
+    z-index: 100;
+  }
+  .configure-img-slider-stage {
+    width: 100%;
+    z-index: 1;
   }
 `;
 export default Configure;
