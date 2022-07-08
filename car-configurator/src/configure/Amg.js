@@ -7,13 +7,16 @@ function Amg() {
   const [color, setColor] = useState("polawhite");
   const [wheel, setWheel] = useState("20alloy");
 
+  const [disabled, setDisabled] = useState(0);
+
   return (
     <ConfigurePageDiv>
       <div className="configure-option-section">
-        <h1 className="configure-option-title">옵션</h1>
         <div>
-          <h2 className="configure-option-title">V8 스타일 팩</h2>
-          <div>
+          <h2 className="configure-option-title" onClick={() => setDisabled(1)}>
+            V8 스타일 팩
+          </h2>
+          <div style={disabled === 1 ? { display: "" } : { display: "none" }}>
             <Button
               onClick={() => setPack("sp")}
               style={pack === "sp" ? { backgroundColor: "#8EA8DB" } : {}}
@@ -35,8 +38,10 @@ function Amg() {
           </div>
         </div>
         <div>
-          <h2 className="configure-option-title">색상</h2>
-          <div>
+          <h2 className="configure-option-title" onClick={() => setDisabled(2)}>
+            색상
+          </h2>
+          <div style={disabled === 2 ? { display: "" } : { display: "none" }}>
             <Button
               onClick={() => setColor("polawhite")}
               style={
@@ -74,8 +79,10 @@ function Amg() {
           </div>
         </div>
         <div>
-          <h2 className="configure-option-title">휠</h2>
-          <div>
+          <h2 className="configure-option-title" onClick={() => setDisabled(3)}>
+            휠
+          </h2>
+          <div style={disabled === 3 ? { display: "" } : { display: "none" }}>
             <Button
               onClick={() => setWheel("20alloy")}
               style={wheel === "20alloy" ? { backgroundColor: "#8EA8DB" } : {}}

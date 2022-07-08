@@ -63,7 +63,6 @@ function Configure({ name, pack, color, wheel }) {
         backgroundImage: `url(${require("./file/CarBackground.jpeg")})`,
       }}
     >
-      {/* // <ConfigureDiv> */}
       <h1 className="configure-img-title">Mercedes-AMG GT 43 4MATIC+</h1>
       <div className="configure-img-div">
         <img
@@ -89,14 +88,14 @@ const ConfigureDiv = styled.div`
   width: 100%;
   margin: auto;
   background-size: cover;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 
   .configure-img-title {
     margin: 15px 40px 0;
   }
   .configure-img-div {
     position: relative;
-    margin-top: 80px;
+    margin-top: 120px;
   }
   .configure-img {
     position: absolute;
