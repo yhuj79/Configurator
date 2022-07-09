@@ -5,10 +5,10 @@ import "./App.css";
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
 
-import CClass from "./configure/CClass";
-import Amg from "./configure/Amg";
-import ClaClass from "./configure/ClaClass";
-import SClass from "./configure/SClass";
+import CClass from "./components/car/CClass";
+import Amg from "./components/car/Amg";
+import ClaClass from "./components/car/ClaClass";
+import SClass from "./components/car/SClass";
 
 function App() {
   return (

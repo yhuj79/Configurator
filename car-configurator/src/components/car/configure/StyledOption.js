@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ConfigurePageDiv = styled.div`
+export const ConfigureDiv = styled.div`
   display: flex;
   margin: auto;
   font-size: 18px;

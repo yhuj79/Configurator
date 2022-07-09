@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
-function Configure({ name, pack, color, wheel }) {
+function Car({ name, titleName, pack, color, wheel }) {
   const imgRef = useRef(null);
   const [isDrag, setIsDrag] = useState(false);
   const [startX, setStartX] = useState();
@@ -56,17 +56,29 @@ function Configure({ name, pack, color, wheel }) {
       setDegree(degree);
     }
   }
+  useEffect(
+    () =>
+      function () {
+        setTimeout(() => setDegree(32), 1100);
+        setTimeout(() => setDegree(33), 1150);
+        setTimeout(() => setDegree(34), 1200);
+        setTimeout(() => setDegree(35), 1250);
+        setTimeout(() => setDegree(36), 1300);
+        setTimeout(() => setDegree(1), 1350);
+      },
+    []
+  );
 
   return (
-    <ConfigureDiv
+    <CarDiv
       style={{
-        backgroundImage: `url(${require("./file/CarBackground.jpeg")})`,
+        backgroundImage: `url(${require("./file/source/CarBackground.jpeg")})`,
       }}
     >
-      <h1 className="configure-img-title">Mercedes-AMG GT 43 4MATIC+</h1>
-      <div className="configure-img-div">
+      <h1 className="car-img-title">{titleName}</h1>
+      <div className="car-img-div">
         <img
-          className="configure-img"
+          className="car-img"
           alt=""
           ref={imgRef}
           onMouseDown={onDragStart}
@@ -76,29 +88,28 @@ function Configure({ name, pack, color, wheel }) {
           src={require(`./file/${name}/${name}-${pack}-${color}-${wheel}-${degree}.webp`)}
         />
         <img
-          className="configure-img-slider-stage"
+          className="car-img-slider-stage"
           alt=""
-          src={require(`./file/CarSliderStage.png`)}
+          src={require(`./file/source/CarSliderStage.png`)}
         />
       </div>
-    </ConfigureDiv>
+    </CarDiv>
   );
 }
-const ConfigureDiv = styled.div`
+const CarDiv = styled.div`
   width: 100%;
   margin: auto;
   background-size: cover;
-  /* border-radius: 15px; */
 
-  .configure-img-title {
+  .car-img-title {
     margin: 25px 40px 0;
     text-shadow: 2px 2px 2px gray;
   }
-  .configure-img-div {
+  .car-img-div {
     position: relative;
     margin-top: 120px;
   }
-  .configure-img {
+  .car-img {
     position: absolute;
     width: 100%;
     z-index: 100;
@@ -118,9 +129,9 @@ const ConfigureDiv = styled.div`
       }
     }
   }
-  .configure-img-slider-stage {
+  .car-img-slider-stage {
     width: 100%;
     z-index: 1;
   }
 `;
-export default Configure;
+export default Car;
