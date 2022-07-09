@@ -5,7 +5,7 @@ function Configure({ name, pack, color, wheel }) {
   const imgRef = useRef(null);
   const [isDrag, setIsDrag] = useState(false);
   const [startX, setStartX] = useState();
-  const [degree, setDegree] = useState(1);
+  const [degree, setDegree] = useState(31);
   const [throttle, setThrottle] = useState(0);
 
   function onDragStart(e) {
@@ -91,7 +91,8 @@ const ConfigureDiv = styled.div`
   /* border-radius: 15px; */
 
   .configure-img-title {
-    margin: 15px 40px 0;
+    margin: 25px 40px 0;
+    text-shadow: 2px 2px 2px gray;
   }
   .configure-img-div {
     position: relative;
@@ -101,6 +102,21 @@ const ConfigureDiv = styled.div`
     position: absolute;
     width: 100%;
     z-index: 100;
+    transition: all 0.7s;
+
+    animation: AppearCar 1s;
+    animation-fill-mode: forwards;
+
+    @keyframes AppearCar {
+      from {
+        opacity: 0;
+        transform: translateX(-200%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
   }
   .configure-img-slider-stage {
     width: 100%;
