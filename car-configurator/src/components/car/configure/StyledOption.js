@@ -53,7 +53,6 @@ export const OpenSection = styled.div`
 `;
 
 export const Button = styled.div`
-  /* width: 80%; */
   background-color: #2b2b2b;
   border: 2px solid white;
   border-radius: 7px;

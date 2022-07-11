@@ -24,6 +24,11 @@ function App() {
           <Route path="/claclass" element={<ClaClass />} />
           <Route path="/sclass" element={<SClass />} />
         </Routes>
+        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
+        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
+        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
+        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
+        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
       </Router>
     </div>
   );

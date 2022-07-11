@@ -72,7 +72,7 @@ function Car({ name, titleName, pack, color, wheel }) {
   return (
     <CarDiv
       style={{
-        backgroundImage: `url(${require("./file/source/CarBackground.jpeg")})`,
+        backgroundImage: `url(${require("./file/source/CarBackground.png")})`,
       }}
     >
       <h1 className="car-img-title">{titleName}</h1>
@@ -102,12 +102,11 @@ const CarDiv = styled.div`
   background-size: cover;
 
   .car-img-title {
-    margin: 25px 40px 0;
+    padding: 15px 25px;
     text-shadow: 2px 2px 2px gray;
   }
   .car-img-div {
     position: relative;
-    margin-top: 120px;
   }
   .car-img {
     position: absolute;

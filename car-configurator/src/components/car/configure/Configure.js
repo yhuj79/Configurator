@@ -1,13 +1,23 @@
 import { useState } from "react";
 import Car from "./Car";
+import Interior from "./Interior";
 import { ConfigureDiv, OptionDiv, Title, OpenSection, Button, Icon, TitleSpan } from "./StyledOption";
 
-function Configure({ name, titleName, packList, colorList, wheelList }) {
+function Configure({ name, titleName, priceVanila, listPack, listColor, listWheel }) {
   const [open, setOpen] = useState(0);
-  const [pack, setPack] = useState(packList[1]);
-  const [color, setColor] = useState(colorList[1]);
-  const [wheel, setWheel] = useState(wheelList[1]);
+  const [pack, setPack] = useState(listPack[1].name);
+  const [color, setColor] = useState(listColor[1].name);
+  const [wheel, setWheel] = useState(listWheel[1].name);
 
+  const [pricePack, setPricePack] = useState(0);
+  const [priceColor, setPriceColor] = useState(0);
+  const [priceWheel, setPriceWheel] = useState(0);
+
+  function Select(set, list, setPriceName, num) {
+    set(list[num].name);
+    setPriceName(list[num].price);
+  }
+  // Commit : Option Test 6 / Price / Interior / Footer
   // Conditional Operate Styling
   const clicked = {
     backgroundColor: "white",
@@ -27,32 +37,32 @@ function Configure({ name, titleName, packList, colorList, wheelList }) {
           <Title onClick={() => setOpen(1)}>
             V8 스타일 팩
             <TitleSpan>
-              {pack === packList[1] ? "기본: 선택 안함" : "+ V8 스타일 팩"}
+              {pack === listPack[1].name ? "기본: 선택 안함" : "+ V8 스타일 팩"}
             </TitleSpan>
           </Title>
           <OpenSection style={open === 1 ? exist : none}>
-            <div style={{ margin: "15px" }}>
-              <Icon alt="" src={require(`./file/source/stylingPackage.jpeg`)} />
+            <div style={{ margin: "15px", width: "50%" }}>
+              <Icon src={require(`./file/source/stylingPackage.jpeg`)} alt="" />
             </div>
             <div>
               <Button
-                onClick={() => setPack(packList[2])}
-                style={pack === packList[2] ? clicked : {}}
+                onClick={() => Select(setPack, listPack, setPricePack, 2)}
+                style={pack === listPack[2].name ? clicked : {}}
               >
                 O
               </Button>
               <Button
                 onClick={
-                  color === colorList[3]
+                  color === listColor[3].name
                     ? undefined
-                    : () => setPack(packList[1])
+                    : () => Select(setPack, listPack, setPricePack, 1)
                 }
                 style={
-                  color === colorList[3]
+                  color === listColor[3].name
                     ? { opacity: "0.2" }
-                    : pack === packList[1]
-                    ? clicked
-                    : {}
+                    : pack === listPack[1].name
+                      ? clicked
+                      : {}
                 }
               >
                 X
@@ -66,37 +76,38 @@ function Configure({ name, titleName, packList, colorList, wheelList }) {
           </Title>
           <OpenSection style={open === 2 ? exist : none}>
             <Button
-              onClick={() => setColor(colorList[1])}
-              style={color === colorList[1] ? clicked : {}}
+              onClick={() => Select(setColor, listColor, setPriceColor, 1)}
+              style={color === listColor[1].name ? clicked : {}}
             >
-              <Icon alt="" src={require(`./file/source/${colorList[1]}.webp`)} />
-              <br />
-              {colorList[1]}
+              <Icon src={require(`./file/source/${listColor[1].name}.webp`)} alt="" /><br />
+              {listColor[1].name}
             </Button>
             <Button
-              onClick={() => setColor(colorList[2])}
-              style={color === colorList[2] ? clicked : {}}
+              onClick={() => Select(setColor, listColor, setPriceColor, 2)}
+              style={color === listColor[2].name ? clicked : {}}
             >
-              <Icon alt="" src={require(`./file/source/${colorList[2]}.webp`)} />
-              <br />
-              {colorList[2]}
+              <Icon src={require(`./file/source/${listColor[2].name}.webp`)} alt="" /><br />
+              {listColor[2].name}
             </Button>
             <Button
               onClick={
-                pack === packList[2] ? () => setColor(colorList[3]) : undefined
+                pack === listPack[2].name
+                  ? () => Select(setColor, listColor, setPriceColor, 3)
+                  : undefined
               }
               style={
-                pack === packList[2]
-                  ? color === colorList[3]
+                pack === listPack[2].name
+                  ? color === listColor[3].name
                     ? clicked
                     : {}
                   : { opacity: "0.2" }
               }
             >
-              <Icon alt="" src={require(`./file/source/${colorList[3]}.webp`)} />
-              <br />
-              {colorList[3]}
-              <span style={pack === packList[2] ? none : { fontSize: "12px" }}>
+              <Icon src={require(`./file/source/${listColor[3].name}.webp`)} alt="" /><br />
+              {listColor[3].name}
+              <span
+                style={pack === listPack[2].name ? none : { fontSize: "12px" }}
+              >
                 <br />
                 (스타일팩 전용)
               </span>
@@ -107,38 +118,70 @@ function Configure({ name, titleName, packList, colorList, wheelList }) {
           <Title onClick={() => setOpen(3)}>
             휠
             <TitleSpan>
-              {wheel === wheelList[1]
-                ? `${wheelList[1]} Wheel`
-                : `${wheelList[2]} Wheel`}
+              {wheel === listWheel[1].name
+                ? `${listWheel[1].name} Wheel`
+                : `${listWheel[2].name} Wheel`}
             </TitleSpan>
           </Title>
           <OpenSection style={open === 3 ? exist : none}>
             <Button
-              onClick={() => setWheel(wheelList[1])}
-              style={wheel === wheelList[1] ? clicked : {}}
+              onClick={() => Select(setWheel, listWheel, setPriceWheel, 1)}
+              style={wheel === listWheel[1].name ? clicked : {}}
             >
-              <Icon alt="" src={require(`./file/source/${wheelList[1]}.webp`)} />
-              <br />
-              {wheelList[1]}
+              <Icon src={require(`./file/source/${listWheel[1].name}.webp`)} alt="" /><br />
+              {listWheel[1].name}
             </Button>
             <Button
-              onClick={() => setWheel(wheelList[2])}
-              style={wheel === wheelList[2] ? clicked : {}}
+              onClick={() => Select(setWheel, listWheel, setPriceWheel, 2)}
+              style={wheel === listWheel[2].name ? clicked : {}}
             >
-              <Icon alt="" src={require(`./file/source/${wheelList[2]}.webp`)} />
-              <br />
-              {wheelList[2]}
+              <Icon src={require(`./file/source/${listWheel[2].name}.webp`)} alt="" /><br />
+              {listWheel[2].name}
             </Button>
           </OpenSection>
         </div>
+        <div>
+          <Title onClick={() => setOpen(4)}>
+            시트커버<TitleSpan></TitleSpan>
+          </Title>
+          <OpenSection style={open === 4 ? exist : none}>
+            <Button>test seat cover</Button>
+          </OpenSection>
+        </div>
+        <div>
+          <Title onClick={() => setOpen(5)}>
+            트림<TitleSpan></TitleSpan>
+          </Title>
+          <OpenSection style={open === 5 ? exist : none}>
+            <Button>test trim</Button>
+          </OpenSection>
+        </div>
+        <div>
+          <Title onClick={() => setOpen(6)}>
+            스티어링 휠<TitleSpan></TitleSpan>
+          </Title>
+          <OpenSection style={open === 6 ? exist : none}>
+            <Button>test steering wheel</Button>
+          </OpenSection>
+        </div>
       </OptionDiv>
-      <Car
-        name={name}
-        titleName={titleName}
-        pack={pack}
-        color={color}
-        wheel={wheel}
-      />
+      <div>
+        {open < 4 ? (
+          <Car
+            name={name}
+            titleName={titleName}
+            pack={pack}
+            color={color}
+            wheel={wheel}
+          />
+        ) : (
+          <Interior titleName={titleName} />
+        )}
+        <h1>{pricePack} KRW</h1>
+        <h1>{priceColor} KRW</h1>
+        <h1>{priceWheel} KRW</h1>
+        <h1>{(priceVanila + pricePack + priceColor + priceWheel).toLocaleString("en")} KRW</h1>
+      </div>
     </ConfigureDiv>
   );
 }

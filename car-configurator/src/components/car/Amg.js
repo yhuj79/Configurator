@@ -1,27 +1,28 @@
 import Configure from "./configure/Configure";
 
 function Amg() {
-  const packList = {
-    1: "nsp",
-    2: "sp",
+  const listPack = {
+    1: { name: "nsp", price: 0 },
+    2: { name: "sp", price: 5940000 },
   };
-  const colorList = {
-    1: "polawhite",
-    2: "black",
-    3: "orange",
+  const listColor = {
+    1: { name: "polawhite", price: 0 },
+    2: { name: "black", price: 0 },
+    3: { name: "orange", price: 10050000 },
   };
-  const wheelList = {
-    1: "20alloy",
-    2: "20multialloy",
+  const listWheel = {
+    1: { name: "20alloy", price: 0 },
+    2: { name: "20multialloy", price: 1030000 },
   };
 
   return (
     <Configure
       name="amg"
       titleName={"Mercedes-AMG GT 43 4MATIC+"}
-      packList={packList}
-      colorList={colorList}
-      wheelList={wheelList}
+      priceVanila={137600000}
+      listPack={listPack}
+      listColor={listColor}
+      listWheel={listWheel}
     />
   );
 }
