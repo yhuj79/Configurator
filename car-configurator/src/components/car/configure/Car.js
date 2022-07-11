@@ -59,12 +59,12 @@ function Car({ name, titleName, pack, color, wheel }) {
   useEffect(
     () =>
       function () {
-        setTimeout(() => setDegree(32), 1100);
-        setTimeout(() => setDegree(33), 1150);
-        setTimeout(() => setDegree(34), 1200);
-        setTimeout(() => setDegree(35), 1250);
-        setTimeout(() => setDegree(36), 1300);
-        setTimeout(() => setDegree(1), 1350);
+        setTimeout(() => setDegree(32), 1600);
+        setTimeout(() => setDegree(33), 1650);
+        setTimeout(() => setDegree(34), 1700);
+        setTimeout(() => setDegree(35), 1750);
+        setTimeout(() => setDegree(36), 1800);
+        setTimeout(() => setDegree(1), 1850);
       },
     []
   );
@@ -100,6 +100,8 @@ const CarDiv = styled.div`
   width: 100%;
   margin: auto;
   background-size: cover;
+  animation: AppearContent 0.8s;
+  animation-fill-mode: forwards;
 
   .car-img-title {
     padding: 15px 25px;
@@ -112,18 +114,15 @@ const CarDiv = styled.div`
     position: absolute;
     width: 100%;
     z-index: 100;
-    transition: all 0.7s;
 
-    animation: AppearCar 1s;
+    animation: AppearCar 1.5s;
     animation-fill-mode: forwards;
 
     @keyframes AppearCar {
       from {
-        opacity: 0;
-        transform: translateX(-200%);
+        transform: translateX(-250%);
       }
       to {
-        opacity: 1;
         transform: translateX(0);
       }
     }

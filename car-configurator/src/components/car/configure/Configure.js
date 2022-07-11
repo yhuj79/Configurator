@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Car from "./Car";
 import Interior from "./Interior";
-import { ConfigureDiv, OptionDiv, Title, OpenSection, Button, Icon, TitleSpan } from "./StyledOption";
+import SubTotal from "./SubTotal";
+import { ConfigureDiv, OptionDiv, Title, TitleSpan, OpenSection, Button, Icon } from "./StyledOption";
 
 function Configure({ name, titleName, priceVanila, listPack, listColor, listWheel }) {
   const [open, setOpen] = useState(0);
@@ -17,7 +18,7 @@ function Configure({ name, titleName, priceVanila, listPack, listColor, listWhee
     set(list[num].name);
     setPriceName(list[num].price);
   }
-  // Commit : Option Test 6 / Price / Interior / Footer
+
   // Conditional Operate Styling
   const clicked = {
     backgroundColor: "white",
@@ -35,7 +36,7 @@ function Configure({ name, titleName, priceVanila, listPack, listColor, listWhee
       <OptionDiv>
         <div>
           <Title onClick={() => setOpen(1)}>
-            V8 스타일 팩
+            스타일링 패키지
             <TitleSpan>
               {pack === listPack[1].name ? "기본: 선택 안함" : "+ V8 스타일 팩"}
             </TitleSpan>
@@ -79,14 +80,22 @@ function Configure({ name, titleName, priceVanila, listPack, listColor, listWhee
               onClick={() => Select(setColor, listColor, setPriceColor, 1)}
               style={color === listColor[1].name ? clicked : {}}
             >
-              <Icon src={require(`./file/source/${listColor[1].name}.webp`)} alt="" /><br />
+              <Icon
+                src={require(`./file/source/${listColor[1].name}.webp`)}
+                alt=""
+              />
+              <br />
               {listColor[1].name}
             </Button>
             <Button
               onClick={() => Select(setColor, listColor, setPriceColor, 2)}
               style={color === listColor[2].name ? clicked : {}}
             >
-              <Icon src={require(`./file/source/${listColor[2].name}.webp`)} alt="" /><br />
+              <Icon
+                src={require(`./file/source/${listColor[2].name}.webp`)}
+                alt=""
+              />
+              <br />
               {listColor[2].name}
             </Button>
             <Button
@@ -103,7 +112,11 @@ function Configure({ name, titleName, priceVanila, listPack, listColor, listWhee
                   : { opacity: "0.2" }
               }
             >
-              <Icon src={require(`./file/source/${listColor[3].name}.webp`)} alt="" /><br />
+              <Icon
+                src={require(`./file/source/${listColor[3].name}.webp`)}
+                alt=""
+              />
+              <br />
               {listColor[3].name}
               <span
                 style={pack === listPack[2].name ? none : { fontSize: "12px" }}
@@ -128,14 +141,22 @@ function Configure({ name, titleName, priceVanila, listPack, listColor, listWhee
               onClick={() => Select(setWheel, listWheel, setPriceWheel, 1)}
               style={wheel === listWheel[1].name ? clicked : {}}
             >
-              <Icon src={require(`./file/source/${listWheel[1].name}.webp`)} alt="" /><br />
+              <Icon
+                src={require(`./file/source/${listWheel[1].name}.webp`)}
+                alt=""
+              />
+              <br />
               {listWheel[1].name}
             </Button>
             <Button
               onClick={() => Select(setWheel, listWheel, setPriceWheel, 2)}
               style={wheel === listWheel[2].name ? clicked : {}}
             >
-              <Icon src={require(`./file/source/${listWheel[2].name}.webp`)} alt="" /><br />
+              <Icon
+                src={require(`./file/source/${listWheel[2].name}.webp`)}
+                alt=""
+              />
+              <br />
               {listWheel[2].name}
             </Button>
           </OpenSection>
@@ -177,11 +198,13 @@ function Configure({ name, titleName, priceVanila, listPack, listColor, listWhee
         ) : (
           <Interior titleName={titleName} />
         )}
-        <h1>{pricePack} KRW</h1>
-        <h1>{priceColor} KRW</h1>
-        <h1>{priceWheel} KRW</h1>
-        <h1>{(priceVanila + pricePack + priceColor + priceWheel).toLocaleString("en")} KRW</h1>
       </div>
+      <SubTotal
+        priceVanila={priceVanila}
+        pricePack={pricePack}
+        priceColor={priceColor}
+        priceWheel={priceWheel}
+      />
     </ConfigureDiv>
   );
 }

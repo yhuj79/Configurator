@@ -40,7 +40,7 @@ function Header() {
 const HeaderDiv = styled.div`
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1000; // HeaderDiv, PriceDiv
 
   display: flex;
   justify-content: space-around;

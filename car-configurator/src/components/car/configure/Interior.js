@@ -20,10 +20,10 @@ const InteriorDiv = styled.div`
   width: 100%;
   margin: auto;
   background-size: cover;
-animation: AppearInterior 1s;
+  animation: AppearContent 0.8s;
   animation-fill-mode: forwards;
 
-  @keyframes AppearInterior {
+  @keyframes AppearContent {
     from {
       opacity: 0;
     }
