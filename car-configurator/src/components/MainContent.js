@@ -40,6 +40,7 @@ function MainContent() {
 const MainContentDiv = styled.div`
   width: 80%;
   margin: auto;
+  padding-bottom: 100px;
   overflow-x: hidden;
 
   .main-container {

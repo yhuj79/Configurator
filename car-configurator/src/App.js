@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
@@ -9,6 +9,7 @@ import CClass from "./components/car/CClass";
 import Amg from "./components/car/Amg";
 import ClaClass from "./components/car/ClaClass";
 import SClass from "./components/car/SClass";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -24,19 +25,7 @@ function App() {
           <Route path="/claclass" element={<ClaClass />} />
           <Route path="/sclass" element={<SClass />} />
         </Routes>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
-        <h1 style={{backgroundColor: "#2b2b2b"}}>Test footer</h1>
+        <Footer />
       </Router>
     </div>
   );

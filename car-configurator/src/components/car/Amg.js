@@ -14,15 +14,31 @@ function Amg() {
     1: { name: "20alloy", price: 0 },
     2: { name: "20multialloy", price: 1030000 },
   };
+  const listCover = {
+    1: { name: "NapaBlack", price: 0 },
+    2: { name: "NapaBrown", price: 6250000 },
+    3: { name: "NapaRed", price: 5430000 },
+  };
+  const listTrim = {
+    1: { name: "BlackPiano", price: 0 },
+    2: { name: "Carbon", price: 6040000 },
+  };
+  const listSteering = {
+    1: { name: "Napa", price: 0 },
+    2: { name: "Dinamica", price: 870000 },
+  };
 
   return (
     <Configure
       name="amg"
-      titleName={"Mercedes-AMG GT 43 4MATIC+"}
+      titleName={"AMG GT 43 4MATIC+"}
       priceVanila={137600000}
       listPack={listPack}
       listColor={listColor}
       listWheel={listWheel}
+      listCover={listCover}
+      listTrim={listTrim}
+      listSteering={listSteering}
     />
   );
 }

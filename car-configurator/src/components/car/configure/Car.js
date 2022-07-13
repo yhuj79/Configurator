@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState, useRef, useEffect } from "react";
 
-function Car({ name, titleName, pack, color, wheel }) {
+function Car({ name, pack, color, wheel }) {
   const imgRef = useRef(null);
   const [isDrag, setIsDrag] = useState(false);
   const [startX, setStartX] = useState();
@@ -40,7 +40,7 @@ function Car({ name, titleName, pack, color, wheel }) {
 
   function degreeLeft() {
     setThrottle(throttle + 1);
-    if (throttle === 15) {
+    if (throttle === 12) {
       degree === 36 ? setDegree(1) : setDegree(degree + 1);
       setThrottle(0);
     } else {
@@ -49,7 +49,7 @@ function Car({ name, titleName, pack, color, wheel }) {
   }
   function degreeRight() {
     setThrottle(throttle + 1);
-    if (throttle === 15) {
+    if (throttle === 12) {
       degree === 1 ? setDegree(36) : setDegree(degree - 1);
       setThrottle(0);
     } else {
@@ -75,8 +75,6 @@ function Car({ name, titleName, pack, color, wheel }) {
         backgroundImage: `url(${require("./file/source/CarBackground.png")})`,
       }}
     >
-      <h1 className="car-img-title">{titleName}</h1>
-      <div className="car-img-div">
         <img
           className="car-img"
           alt=""
@@ -92,7 +90,6 @@ function Car({ name, titleName, pack, color, wheel }) {
           alt=""
           src={require(`./file/source/CarSliderStage.png`)}
         />
-      </div>
     </CarDiv>
   );
 }
@@ -102,13 +99,11 @@ const CarDiv = styled.div`
   background-size: cover;
   animation: AppearContent 0.8s;
   animation-fill-mode: forwards;
+  position: relative;
 
   .car-img-title {
     padding: 15px 25px;
     text-shadow: 2px 2px 2px gray;
-  }
-  .car-img-div {
-    position: relative;
   }
   .car-img {
     position: absolute;

@@ -18,6 +18,7 @@ export const Title = styled.h2`
   width: 85%;
   margin: 15px;
   padding: 15px;
+  font-size: 18px;
   color: white;
   border-bottom: 1px solid white;
   transition: all 0.3s;
@@ -28,11 +29,11 @@ export const Title = styled.h2`
 `;
 
 export const TitleSpan = styled.a`
-  font-size: 18px;
-  line-height: 2;
+  font-size: 15px;
+  line-height: 2.5;
   float: right;
   color: gray;
-`
+`;
 
 export const OpenSection = styled.div`
   display: flex;
