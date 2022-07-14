@@ -10,7 +10,8 @@ import {
   TitleSpan,
   OpenSection,
   Button,
-  Icon,
+  Image,
+  StylingPackage,
 } from "./StyledOption";
 
 function Configure({
@@ -70,9 +71,13 @@ function Configure({
             </TitleSpan>
           </Title>
           <OpenSection style={open === 1 ? exist : none}>
-            <div style={{ margin: "15px", width: "50%" }}>
-              <Icon src={require(`./file/source/stylingPackage.jpeg`)} alt="" />
-            </div>
+            <StylingPackage>
+              <Image
+                src={require(`./file/source/stylingPackage.jpeg`)}
+                style={{ borderRadius: "10px" }}
+                alt=""
+              />
+            </StylingPackage>
             <div>
               <Button
                 onClick={() => Select(setPack, listPack, setPricePack, 2)}
@@ -111,7 +116,7 @@ function Configure({
               onClick={() => Select(setColor, listColor, setPriceColor, 1)}
               style={color === listColor[1].name ? clicked : {}}
             >
-              <Icon
+              <Image
                 src={require(`./file/source/${listColor[1].name}.webp`)}
                 alt=""
               />
@@ -122,7 +127,7 @@ function Configure({
               onClick={() => Select(setColor, listColor, setPriceColor, 2)}
               style={color === listColor[2].name ? clicked : {}}
             >
-              <Icon
+              <Image
                 src={require(`./file/source/${listColor[2].name}.webp`)}
                 alt=""
               />
@@ -143,7 +148,7 @@ function Configure({
                   : { opacity: "0.2" }
               }
             >
-              <Icon
+              <Image
                 src={require(`./file/source/${listColor[3].name}.webp`)}
                 alt=""
               />
@@ -175,7 +180,7 @@ function Configure({
               onClick={() => Select(setWheel, listWheel, setPriceWheel, 1)}
               style={wheel === listWheel[1].name ? clicked : {}}
             >
-              <Icon
+              <Image
                 src={require(`./file/source/${listWheel[1].name}.webp`)}
                 alt=""
               />
@@ -186,7 +191,7 @@ function Configure({
               onClick={() => Select(setWheel, listWheel, setPriceWheel, 2)}
               style={wheel === listWheel[2].name ? clicked : {}}
             >
-              <Icon
+              <Image
                 src={require(`./file/source/${listWheel[2].name}.webp`)}
                 alt=""
               />
@@ -200,14 +205,14 @@ function Configure({
             onClick={() => setOpen(4)}
             style={open === 4 ? { fontSize: "25px" } : exist}
           >
-            시트커버<TitleSpan>{cover}</TitleSpan>
+            시트 커버<TitleSpan>{cover}</TitleSpan>
           </Title>
           <OpenSection style={open === 4 ? exist : none}>
             <Button
               onClick={() => Select(setCover, listCover, setPriceCover, 1)}
               style={cover === listCover[1].name ? clicked : {}}
             >
-              <Icon
+              <Image
                 src={require(`./file/source/${listCover[1].name}.webp`)}
                 alt=""
               />
@@ -218,7 +223,7 @@ function Configure({
               onClick={() => Select(setCover, listCover, setPriceCover, 2)}
               style={cover === listCover[2].name ? clicked : {}}
             >
-              <Icon
+              <Image
                 src={require(`./file/source/${listCover[2].name}.webp`)}
                 alt=""
               />
@@ -229,7 +234,7 @@ function Configure({
               onClick={() => Select(setCover, listCover, setPriceCover, 3)}
               style={cover === listCover[3].name ? clicked : {}}
             >
-              <Icon
+              <Image
                 src={require(`./file/source/${listCover[3].name}.webp`)}
                 alt=""
               />
@@ -250,7 +255,7 @@ function Configure({
               onClick={() => Select(setTrim, listTrim, setPriceTrim, 1)}
               style={trim === listTrim[1].name ? clicked : {}}
             >
-              <Icon
+              <Image
                 src={require(`./file/source/${listTrim[1].name}.webp`)}
                 alt=""
               />
@@ -261,7 +266,7 @@ function Configure({
               onClick={() => Select(setTrim, listTrim, setPriceTrim, 2)}
               style={trim === listTrim[2].name ? clicked : {}}
             >
-              <Icon
+              <Image
                 src={require(`./file/source/${listTrim[2].name}.webp`)}
                 alt=""
               />
@@ -279,10 +284,12 @@ function Configure({
           </Title>
           <OpenSection style={open === 6 ? exist : none}>
             <Button
-              onClick={() => Select(setSteering, listSteering, setPriceSteering, 1)}
+              onClick={() =>
+                Select(setSteering, listSteering, setPriceSteering, 1)
+              }
               style={steering === listSteering[1].name ? clicked : {}}
             >
-              <Icon
+              <Image
                 src={require(`./file/source/${listSteering[1].name}.webp`)}
                 alt=""
               />
@@ -290,10 +297,12 @@ function Configure({
               {listSteering[1].name}
             </Button>
             <Button
-              onClick={() => Select(setSteering, listSteering, setPriceSteering, 2)}
+              onClick={() =>
+                Select(setSteering, listSteering, setPriceSteering, 2)
+              }
               style={steering === listSteering[2].name ? clicked : {}}
             >
-              <Icon
+              <Image
                 src={require(`./file/source/${listSteering[2].name}.webp`)}
                 alt=""
               />

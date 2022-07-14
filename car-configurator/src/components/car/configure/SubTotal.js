@@ -62,9 +62,15 @@ function SubTotal({
       <div className="sub-section-thr">
         <p className="sub-line-price">최종 금액</p>
         <p className="sub-line-price-total">
-          {(priceVanila + pricePack + priceColor + priceWheel + priceCover + priceTrim + priceSteering).toLocaleString(
-            "en"
-          )}{" "}
+          {(
+            priceVanila +
+            pricePack +
+            priceColor +
+            priceWheel +
+            priceCover +
+            priceTrim +
+            priceSteering
+          ).toLocaleString("en")}{" "}
           KRW
         </p>
       </div>

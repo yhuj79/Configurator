@@ -14,6 +14,11 @@ export const OptionDiv = styled.div`
   font-weight: bold;
 `;
 
+export const StylingPackage = styled.div`
+  width: 60%;
+  margin: 15px;
+`;
+
 export const Title = styled.h2`
   width: 85%;
   margin: 15px;
@@ -66,6 +71,6 @@ export const Button = styled.div`
   }
 `;
 
-export const Icon = styled.img`
+export const Image = styled.img`
   width: 100%;
 `;
