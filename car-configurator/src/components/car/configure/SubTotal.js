@@ -80,6 +80,7 @@ function SubTotal({
 const SubTotalDiv = styled.div`
   display: flex;
   width: 95%;
+  height: 110px;
   background-color: #3b3b3b;
   margin: 20px auto;
   padding: 15px;

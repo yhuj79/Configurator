@@ -59,6 +59,8 @@ export const OpenSection = styled.div`
 `;
 
 export const Button = styled.div`
+  width: 100px;
+  text-align: center;
   background-color: #2b2b2b;
   border: 2px solid white;
   border-radius: 7px;
@@ -67,7 +69,7 @@ export const Button = styled.div`
   transition: all 0.3s;
 
   &:hover {
-    opacity: 0.6;
+    opacity: 0.7;
   }
 `;
 
