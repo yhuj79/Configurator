@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Header from "./components/Header";
-import MainContent from "./components/MainContent";
+import Home from "./components/Home";
 
 import CClass from "./components/car/CClass";
 import Amg from "./components/car/Amg";
@@ -17,7 +17,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<MainContent />} />
+          <Route path="/" element={<Home />} />
 
           {/* Configure */}
           <Route path="/cclass" element={<CClass />} />
