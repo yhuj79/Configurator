@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import MainSlideImg from "./MainSlideImg";
+import SlideImg from "./SlideImg";
 
-function MainSlide() {
+function Slide() {
   const [imgNum, setImgNum] = useState(1);
 
   useEffect(() => {
@@ -32,16 +32,16 @@ function MainSlide() {
   }
 
   return (
-    <MainSlideDiv>
+    <SlideDiv>
       <div className={imgNum === 1 ? "slide-img" : "none"}>
-        <MainSlideImg
+        <SlideImg
           src="Amg"
           titleOne="The all-new"
           titleTwo="Mercedes-AMG GT 4-Door Coupé."
         />
       </div>
       <div className={imgNum === 2 ? "slide-img" : "none"}>
-        <MainSlideImg
+        <SlideImg
           src="Sclass"
           titleOne="The new"
           titleTwo="S-Class."
@@ -49,7 +49,7 @@ function MainSlide() {
         />
       </div>
       <div className={imgNum === 3 ? "slide-img" : "none"}>
-        <MainSlideImg
+        <SlideImg
           src="Cclass"
           titleOne="The new"
           titleTwo="C-Class."
@@ -57,7 +57,7 @@ function MainSlide() {
         />
       </div>
       <div className={imgNum === 4 ? "slide-img" : "none"}>
-        <MainSlideImg
+        <SlideImg
           src="Cla"
           titleTwo="The CLA."
           titleMini="Automotive intelligence can be this beautiful."
@@ -65,10 +65,10 @@ function MainSlide() {
       </div>
       <button onClick={() => SlideLeft()}>{"<"}</button>
       <button onClick={() => SlideRight()}>{">"}</button>
-    </MainSlideDiv>
+    </SlideDiv>
   );
 }
-const MainSlideDiv = styled.div`
+const SlideDiv = styled.div`
   position: relative;
   width: 80%;
   margin: auto;
@@ -91,4 +91,4 @@ const MainSlideDiv = styled.div`
     }
   }
 `;
-export default MainSlide;
+export default Slide;

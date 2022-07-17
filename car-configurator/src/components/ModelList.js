@@ -1,51 +1,51 @@
 import styled from "styled-components";
 
-import MainCard from "./MainCard";
+import Model from "./Model";
 
-function MainContent() {
+function ModelList() {
 
   return (
-    <MainContentDiv>
-      <div className="main-container">
-        <MainCard
+    <ModelListDiv>
+      <div className="model-list-section">
+        <Model
           image={require("../img/Main_Amg.png")}
           name="AMG"
           route="amg"
           animationDelay={0.1}
         />
-        <MainCard
+        <Model
           image={require("../img/Main_Sclass.png")}
           name="S-Class"
           route="sclass"
           animationDelay={0.5}
         />
       </div>
-      <div className="main-container">
-        <MainCard
+      <div className="model-list-section">
+        <Model
           image={require("../img/Main_Cla.png")}
           name="CLA-Class"
           route="claclass"
           animationDelay={0.9}
         />
-        <MainCard
+        <Model
           image={require("../img/Main_Cclass.png")}
           name="C-Class"
           route="cclass"
           animationDelay={1.3}
         />
       </div>
-    </MainContentDiv>
+    </ModelListDiv>
   );
 }
-const MainContentDiv = styled.div`
+const ModelListDiv = styled.div`
   width: 80%;
   margin: auto;
   padding-bottom: 100px;
   overflow-x: hidden;
 
-  .main-container {
+  .model-list-section {
     display: flex;
     position: relative;
   }
 `;
-export default MainContent;
+export default ModelList;

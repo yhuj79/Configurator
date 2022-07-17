@@ -3,42 +3,42 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SettingsIcon from "@mui/icons-material/Settings";
 
-function MainCard({ image, name, animationDelay, route }) {
+function Model({ image, name, animationDelay, route }) {
   const [delay, setDelay] = useState("delay-loaded");
-  setTimeout(() => setDelay("card-configure-button"), 2000);
+  setTimeout(() => setDelay("model-configure-button"), 2000);
 
   return (
-    <MainCardDiv style={{ animationDelay: `${animationDelay}s` }}>
-      <img className="card-img" alt="" src={image} />
+    <ModelDiv style={{ animationDelay: `${animationDelay}s` }}>
+      <img className="model-img" alt="" src={image} />
       <Link to={`/${route}`} className={delay}>
           <SettingsIcon /> Configure
       </Link>
-      <div className="card-text-section">
-        <p className="card-text-title">{name}</p>
+      <div className="model-text-section">
+        <p className="model-text-title">{name}</p>
       </div>
-    </MainCardDiv>
+    </ModelDiv>
   );
 }
-const MainCardDiv = styled.div`
+const ModelDiv = styled.div`
   width: 50%;
   margin: 0 8px 16px;
   opacity: 0;
   animation: AppearSmooth 1.2s;
   animation-fill-mode: forwards;
 
-  .card-img {
+  .model-img {
     width: 100%;
     opacity: 0.7;
     transition: all 0.5s;
   }
-  .delay-loaded, .card-configure-button {
+  .delay-loaded, .model-configure-button {
     text-decoration: none;
     position: absolute;
     top: 5%;
     right: -20%;
     opacity: 0;
   }
-  .card-configure-button {
+  .model-configure-button {
     right: -10%;
     color: black;
     font-size: 20px;
@@ -48,12 +48,12 @@ const MainCardDiv = styled.div`
     font-size: 25px;
     margin-bottom: -5px;
   }
-  .card-text-section {
+  .model-text-section {
     position: absolute;
     bottom: 5%;
     left: 3%;
   }
-  .card-text-title {
+  .model-text-title {
     font-family: "Playfair Display", serif;
     font-size: 35px;
     font-weight: bold;
@@ -65,11 +65,11 @@ const MainCardDiv = styled.div`
     transition: all 0.3s;
   }
 
-  &:hover > .card-img {
+  &:hover > .model-img {
     opacity: 1;
     transition: all 0.5s;
   }
-  &:hover > .card-configure-button {
+  &:hover > .model-configure-button {
     color: white;
     padding: 10px;
     border-radius: 10px;
@@ -78,7 +78,7 @@ const MainCardDiv = styled.div`
     right: 3%;
     transition: all 0.3s;
   }
-  &:hover .card-text-title {
+  &:hover .model-text-title {
     font-size: 50px;
     transition: all 0.3s;
   }
@@ -94,4 +94,4 @@ const MainCardDiv = styled.div`
     }
   }
 `;
-export default MainCard;
+export default Model;

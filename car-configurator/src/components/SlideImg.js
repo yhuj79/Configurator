@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-function MainSlideImg({ src, titleOne, titleTwo, titleMini }) {
+function SlideImg({ src, titleOne, titleTwo, titleMini }) {
   return (
-    <MainSlideImgDiv>
+    <SlideImgDiv>
       <img
         className="slide-img"
         alt=""
@@ -13,10 +13,10 @@ function MainSlideImg({ src, titleOne, titleTwo, titleMini }) {
         <p className="slide-text-two">{titleTwo}</p>
         <p className="slide-text-mini">{titleMini}</p>
       </div>
-    </MainSlideImgDiv>
+    </SlideImgDiv>
   );
 }
-const MainSlideImgDiv = styled.div`
+const SlideImgDiv = styled.div`
   .slide-text {
     position: absolute;
     font-family: "Playfair Display", serif;
@@ -58,4 +58,4 @@ const MainSlideImgDiv = styled.div`
     }
   }
 `;
-export default MainSlideImg;
+export default SlideImg;

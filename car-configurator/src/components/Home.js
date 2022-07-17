@@ -1,11 +1,11 @@
-import MainContent from "./MainContent";
-import MainSlide from "./MainSlide";
+import ModelList from "./ModelList";
+import Slide from "./Slide";
 
 function Home() {
     return (
         <div>
-            <MainSlide />
-            <MainContent />
+            <Slide />
+            <ModelList />
         </div>
     );
 }
