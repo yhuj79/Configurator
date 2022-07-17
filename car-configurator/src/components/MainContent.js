@@ -14,7 +14,7 @@ function MainContent() {
           animationDelay={0.1}
         />
         <MainCard
-          image={require("../img/Main_Sclass.jpg")}
+          image={require("../img/Main_Sclass.png")}
           name="S-Class"
           route="sclass"
           animationDelay={0.5}
@@ -22,13 +22,13 @@ function MainContent() {
       </div>
       <div className="main-container">
         <MainCard
-          image={require("../img/Main_Cla.jpg")}
+          image={require("../img/Main_Cla.png")}
           name="CLA-Class"
           route="claclass"
           animationDelay={0.9}
         />
         <MainCard
-          image={require("../img/Main_Cclass.jpeg")}
+          image={require("../img/Main_Cclass.png")}
           name="C-Class"
           route="cclass"
           animationDelay={1.3}

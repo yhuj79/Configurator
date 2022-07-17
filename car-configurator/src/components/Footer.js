@@ -1,22 +1,30 @@
 import styled from "styled-components";
 import Logo from "../img/Logo.png";
 
-import Twitter from '@mui/icons-material/Twitter';
-import Facebook from '@mui/icons-material/Facebook';
-import Instagram from '@mui/icons-material/Instagram';
-import YouTube from '@mui/icons-material/YouTube';
+import Twitter from "@mui/icons-material/Twitter";
+import Facebook from "@mui/icons-material/Facebook";
+import Instagram from "@mui/icons-material/Instagram";
+import YouTube from "@mui/icons-material/YouTube";
 
 function Footer() {
   const iconStyle = {
     fontSize: "30px",
     margin: "30px",
-    color: "white"
+    color: "white",
   };
 
   return (
     <FooterDiv>
+      <div className="footer-message">
+        <p>
+          This site is a project for practicing web development. Product Image
+          All rights reserved Mercedes-Benz. Follow us and use the following
+          social media platforms to get in contact with us and to share your
+          passion for the brand, products and services of Mercedes-Benz.
+        </p>
+      </div>
       <img className="footer-img" alt="" src={Logo} />
-      <div className="footer-img-list">
+      <div className="footer-list">
         <p>Provider</p>
         <p>Legal Notice</p>
         <p>Cookies</p>
@@ -26,7 +34,7 @@ function Footer() {
         <p>Careers</p>
         <p>Investor Relations</p>
       </div>
-      <div className="footer-img-list">
+      <div className="footer-list">
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -62,19 +70,25 @@ function Footer() {
 const FooterDiv = styled.div`
   background-color: #3b3b3b;
   text-align: center;
-  padding: 50px 0 30px;
+  padding: 50px 0 40px;
 
+  .footer-message {
+    width: 60%;
+    margin: auto;
+    opacity: 0.7;
+  }
   .footer-img {
     width: 60px;
     filter: brightness(250%);
+    margin: 40px;
   }
-  .footer-img-list {
+  .footer-list {
     display: flex;
     justify-content: center;
     opacity: 0.7;
   }
-  .footer-img-list p {
-    margin: 20px 50px 20px;
+  .footer-list p {
+    margin: 0 50px 20px;
   }
 `;
 export default Footer;

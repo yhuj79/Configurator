@@ -9,39 +9,42 @@ import { Link } from "react-router-dom";
 function Header() {
   const iconStyle = {
     fontSize: "30px",
-    margin: "30px 40px 0",
     color: "white",
   };
 
   return (
     <HeaderDiv>
-      <div className="header-icon">
-        <MenuIcon sx={iconStyle} />
-        <InsertPhotoIcon sx={iconStyle} />
+      <div className="header-icon-div">
+        <div className="header-icon">
+          <MenuIcon sx={iconStyle} />
+        </div>
+        <div className="header-icon">
+          <InsertPhotoIcon sx={iconStyle} />
+        </div>
       </div>
       <Link to="/" className="header-logo">
         <img className="header-img" alt="" src={Logo} />
         <p>Mercedes-Benz</p>
       </Link>
-      <div className="header-icon">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.youtube.com/mercedesbenztv"
-        >
-          <YouTubeIcon sx={iconStyle} />
-        </a>
-        <LanguageIcon sx={iconStyle} />
+      <div className="header-icon-div">
+        <div className="header-icon">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.youtube.com/mercedesbenztv"
+          >
+            <YouTubeIcon sx={iconStyle} />
+          </a>
+        </div>
+        <div className="header-icon">
+          <LanguageIcon sx={iconStyle} />
+        </div>
       </div>
     </HeaderDiv>
   );
 }
 
 const HeaderDiv = styled.div`
-  /* position: sticky;
-  top: 0; */
-  z-index: 1000; // HeaderDiv, PriceDiv
-
   display: flex;
   justify-content: space-around;
   font-weight: lighter;
@@ -65,11 +68,15 @@ const HeaderDiv = styled.div`
     width: 60px;
     filter: brightness(250%);
   }
-  .header-icon {
+  .header-icon-div {
+    display: flex;
     opacity: 0;
     animation: AppearNormal 1.2s;
     animation-delay: 1.6s;
     animation-fill-mode: forwards;
+  }
+  .header-icon {
+    margin: 30px;
   }
 
   @keyframes AppearNormal {
