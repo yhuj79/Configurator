@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Logo from "../img/Logo.png";
+import Logo from "../../assets/Logo.png";
 
 import Twitter from "@mui/icons-material/Twitter";
 import Facebook from "@mui/icons-material/Facebook";

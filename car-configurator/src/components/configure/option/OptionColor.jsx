@@ -1,4 +1,4 @@
-import { Title, TitleSpan, OpenSection, Button, Image } from "./styledOption";
+import { Title, TitleSpan, OpenSection, Button, Image } from "./Option.style";
 
 function OptionColor({
   open,
@@ -30,7 +30,7 @@ function OptionColor({
           style={color === listColor[1].name ? styleClicked : {}}
         >
           <Image
-            src={require(`./file/source/${listColor[1].name}.webp`)}
+            src={require(`../file/source/${listColor[1].name}.webp`)}
             alt=""
           />
           <br />
@@ -41,7 +41,7 @@ function OptionColor({
           style={color === listColor[2].name ? styleClicked : {}}
         >
           <Image
-            src={require(`./file/source/${listColor[2].name}.webp`)}
+            src={require(`../file/source/${listColor[2].name}.webp`)}
             alt=""
           />
           <br />
@@ -62,7 +62,7 @@ function OptionColor({
           }
         >
           <Image
-            src={require(`./file/source/${listColor[3].name}.webp`)}
+            src={require(`../file/source/${listColor[3].name}.webp`)}
             alt=""
           />
           <br />

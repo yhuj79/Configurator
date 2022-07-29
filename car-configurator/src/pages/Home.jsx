@@ -1,5 +1,5 @@
-import ModelList from "./ModelList";
-import Slide from "./Slide";
+import ModelList from "../components/home/ModelList/ModelList";
+import Slide from "../components/home/Slide/Slide";
 
 function Home() {
     return (

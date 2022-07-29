@@ -1,4 +1,4 @@
-import { Title, TitleSpan, OpenSection, Button, Image } from "./styledOption";
+import { Title, TitleSpan, OpenSection, Button, Image } from "./Option.style";
 
 function OptionTrim({
   open,
@@ -24,7 +24,7 @@ function OptionTrim({
           style={trim === listTrim[1].name ? styleClicked : {}}
         >
           <Image
-            src={require(`./file/source/${listTrim[1].name}.webp`)}
+            src={require(`../file/source/${listTrim[1].name}.webp`)}
             alt=""
           />
           <br />
@@ -35,7 +35,7 @@ function OptionTrim({
           style={trim === listTrim[2].name ? styleClicked : {}}
         >
           <Image
-            src={require(`./file/source/${listTrim[2].name}.webp`)}
+            src={require(`../file/source/${listTrim[2].name}.webp`)}
             alt=""
           />
           <br />

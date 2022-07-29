@@ -1,4 +1,4 @@
-import { Title, TitleSpan, OpenSection, Button, Image } from "./styledOption";
+import { Title, TitleSpan, OpenSection, Button, Image } from "./Option.style";
 
 function OptionWheel({
   open,
@@ -29,7 +29,7 @@ function OptionWheel({
           style={wheel === listWheel[1].name ? styleClicked : {}}
         >
           <Image
-            src={require(`./file/source/${listWheel[1].name}.webp`)}
+            src={require(`../file/source/${listWheel[1].name}.webp`)}
             alt=""
           />
           <br />
@@ -40,7 +40,7 @@ function OptionWheel({
           style={wheel === listWheel[2].name ? styleClicked : {}}
         >
           <Image
-            src={require(`./file/source/${listWheel[2].name}.webp`)}
+            src={require(`../file/source/${listWheel[2].name}.webp`)}
             alt=""
           />
           <br />

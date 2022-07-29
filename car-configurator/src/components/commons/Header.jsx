@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Logo from "../img/Logo.png";
+import Logo from "../../assets/Logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
 import YouTubeIcon from "@mui/icons-material/YouTube";

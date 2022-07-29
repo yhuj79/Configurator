@@ -1,4 +1,4 @@
-import Configure from "./configure/Configure";
+import Configure from "../components/configure/Configure";
 
 function Amg() {
   const listPack = {

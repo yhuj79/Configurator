@@ -1,15 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import "./App.css";
-
-import Header from "./components/Header";
-import Home from "./components/Home";
-
-import CClass from "./components/car/CClass";
-import Amg from "./components/car/Amg";
-import ClaClass from "./components/car/ClaClass";
-import SClass from "./components/car/SClass";
-import Footer from "./components/Footer";
+import "./App.css"; // font
+import Header from "./components/commons/Header";
+import Footer from "./components/commons/Footer";
+import Home from "./pages/Home";
+import Amg from "./pages/Amg";
+import SClass from "./pages/SClass";
+import ClaClass from "./pages/ClaClass";
+import CClass from "./pages/CClass";
 
 function App() {
   return (
@@ -20,10 +17,10 @@ function App() {
           <Route path="/" element={<Home />} />
 
           {/* Configure */}
-          <Route path="/cclass" element={<CClass />} />
           <Route path="/amg" element={<Amg />} />
-          <Route path="/claclass" element={<ClaClass />} />
           <Route path="/sclass" element={<SClass />} />
+          <Route path="/claclass" element={<ClaClass />} />
+          <Route path="/cclass" element={<CClass />} />
         </Routes>
         <Footer />
       </Router>

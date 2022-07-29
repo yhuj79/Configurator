@@ -1,4 +1,4 @@
-import { Title, TitleSpan, OpenSection, Button, Image, StylingPackage, } from "./styledOption";
+import { Title, TitleSpan, OpenSection, Button, Image, StylingPackage, } from "./Option.style";
 
 function OptionStylePack({
   open,
@@ -26,7 +26,7 @@ function OptionStylePack({
       <OpenSection style={open === 1 ? { display: "" } : { display: "none" }}>
         <StylingPackage>
           <Image
-            src={require(`./file/source/stylingPackage.jpeg`)}
+            src={require(`../file/source/stylingPackage.jpeg`)}
             style={{ borderRadius: "10px" }}
             alt=""
           />

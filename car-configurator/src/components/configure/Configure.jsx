@@ -3,13 +3,13 @@ import Car from "./Car";
 import InteriorSide from "./InteriorSide";
 import InteriorFront from "./InteriorFront";
 import SubTotal from "./SubTotal";
-import { ConfigureDiv, OptionDiv } from "./styledOption";
-import OptionStylePack from "./OptionStylePack";
-import OptionColor from "./OptionColor";
-import OptionWheel from "./OptionWheel";
-import OptionCover from "./OptionCover";
-import OptionTrim from "./OptionTrim";
-import OptionSteering from "./OptionSteering";
+import { ConfigureDiv, OptionDiv } from "./option/Option.style";
+import OptionStylePack from "./option/OptionStylePack";
+import OptionColor from "./option/OptionColor";
+import OptionWheel from "./option/OptionWheel";
+import OptionCover from "./option/OptionCover";
+import OptionTrim from "./option/OptionTrim";
+import OptionSteering from "./option/OptionSteering";
 
 function Configure({
   name,

@@ -1,4 +1,4 @@
-import { Title, TitleSpan, OpenSection, Button, Image } from "./styledOption";
+import { Title, TitleSpan, OpenSection, Button, Image } from "./Option.style";
 
 function OptionCover({
   open,
@@ -24,7 +24,7 @@ function OptionCover({
           style={cover === listCover[1].name ? styleClicked : {}}
         >
           <Image
-            src={require(`./file/source/${listCover[1].name}.webp`)}
+            src={require(`../file/source/${listCover[1].name}.webp`)}
             alt=""
           />
           <br />
@@ -35,7 +35,7 @@ function OptionCover({
           style={cover === listCover[2].name ? styleClicked : {}}
         >
           <Image
-            src={require(`./file/source/${listCover[2].name}.webp`)}
+            src={require(`../file/source/${listCover[2].name}.webp`)}
             alt=""
           />
           <br />
@@ -46,7 +46,7 @@ function OptionCover({
           style={cover === listCover[3].name ? styleClicked : {}}
         >
           <Image
-            src={require(`./file/source/${listCover[3].name}.webp`)}
+            src={require(`../file/source/${listCover[3].name}.webp`)}
             alt=""
           />
           <br />

@@ -6,7 +6,7 @@ function SlideImg({ src, titleOne, titleTwo, titleMini }) {
       <img
         className="slide-img"
         alt=""
-        src={require(`../img/Slide_${src}.webp`)}
+        src={require(`./img/Slide_${src}.webp`)}
       />
       <div className="slide-text">
         <p className="slide-text-one">{titleOne}</p>

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import Model from "./Model";
 
 function ModelList() {
@@ -8,13 +7,13 @@ function ModelList() {
     <ModelListDiv>
       <div className="model-list-section">
         <Model
-          image={require("../img/Main_Amg.png")}
+          image={require("./img/Model_Amg.png")}
           name="AMG"
           route="amg"
           animationDelay={0.1}
         />
         <Model
-          image={require("../img/Main_Sclass.png")}
+          image={require("./img/Model_Sclass.png")}
           name="S-Class"
           route="sclass"
           animationDelay={0.5}
@@ -22,13 +21,13 @@ function ModelList() {
       </div>
       <div className="model-list-section">
         <Model
-          image={require("../img/Main_Cla.png")}
+          image={require("./img/Model_Cla.png")}
           name="CLA-Class"
           route="claclass"
           animationDelay={0.9}
         />
         <Model
-          image={require("../img/Main_Cclass.png")}
+          image={require("./img/Model_Cclass.png")}
           name="C-Class"
           route="cclass"
           animationDelay={1.3}
