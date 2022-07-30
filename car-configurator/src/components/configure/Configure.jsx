@@ -1,9 +1,10 @@
 import { useState } from "react";
+import styled from "styled-components";
 import Car from "./Car";
 import InteriorSide from "./InteriorSide";
 import InteriorFront from "./InteriorFront";
 import SubTotal from "./SubTotal";
-import { ConfigureDiv, OptionDiv } from "./option/Option.style";
+import { OptionDiv } from "./option/Option.style";
 import OptionStylePack from "./option/OptionStylePack";
 import OptionColor from "./option/OptionColor";
 import OptionWheel from "./option/OptionWheel";
@@ -42,6 +43,23 @@ function Configure({
     setPriceName(list[num].price);
   }
 
+  function Reset() {
+    window.location.reload();
+    // setOpen(1);
+    // setPack(listPack[1].name);
+    // setColor(listColor[1].name);
+    // setWheel(listWheel[1].name);
+    // setCover(listCover[1].name);
+    // setTrim(listTrim[1].name);
+    // setSteering(listSteering[1].name);
+    // setPricePack(0);
+    // setPriceColor(0);
+    // setPriceWheel(0);
+    // setPriceCover(0);
+    // setPriceTrim(0);
+    // setPriceSteering(0);
+  }
+
   // Conditional Operate Styling
   const styleClicked = {
     backgroundColor: "white",
@@ -50,6 +68,33 @@ function Configure({
 
   return (
     <ConfigureDiv>
+      <div>
+        <SubTotal
+          titleName={titleName}
+          priceVanila={priceVanila}
+          pricePack={pricePack}
+          priceColor={priceColor}
+          priceWheel={priceWheel}
+          priceCover={priceCover}
+          priceTrim={priceTrim}
+          priceSteering={priceSteering}
+        />
+        <div>
+          {open < 4 ? (
+            <Car
+              name={name}
+              titleName={titleName}
+              pack={pack}
+              color={color}
+              wheel={wheel}
+            />
+          ) : open === 4 ? (
+            <InteriorSide cover={cover} trim={trim} steering={steering} />
+          ) : (
+            <InteriorFront cover={cover} trim={trim} steering={steering} />
+          )}
+        </div>
+      </div>
       <OptionDiv>
         <OptionStylePack
           open={open}
@@ -115,36 +160,17 @@ function Configure({
           setPriceSteering={setPriceSteering}
           Select={Select}
         />
-        {/* <button style={{padding: "30px"}}>기본 옵션으로 초기화</button> */}
+        <button onClick={() => Reset()} style={{ padding: "30px" }}>
+          기본 옵션으로 초기화
+        </button>
       </OptionDiv>
-      <div>
-        <SubTotal
-          titleName={titleName}
-          priceVanila={priceVanila}
-          pricePack={pricePack}
-          priceColor={priceColor}
-          priceWheel={priceWheel}
-          priceCover={priceCover}
-          priceTrim={priceTrim}
-          priceSteering={priceSteering}
-        />
-        <div>
-          {open < 4 ? (
-            <Car
-              name={name}
-              titleName={titleName}
-              pack={pack}
-              color={color}
-              wheel={wheel}
-            />
-          ) : open === 4 ? (
-            <InteriorSide cover={cover} trim={trim} steering={steering} />
-          ) : (
-            <InteriorFront cover={cover} trim={trim} steering={steering} />
-          )}
-        </div>
-      </div>
     </ConfigureDiv>
   );
 }
+const ConfigureDiv = styled.div`
+  display: flex;
+  margin: auto;
+  font-size: 18px;
+  background-color: #2b2b2b;
+`;
 export default Configure;

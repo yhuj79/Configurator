@@ -1,4 +1,4 @@
-import { Title, TitleSpan, OpenSection, Button, Image, StylingPackage, } from "./Option.style";
+import { Title, TitleSpan, OpenSection, ButtonStylePackDiv, ButtonStylePack, Image, StylingPackage, } from "./Option.style";
 
 function OptionStylePack({
   open,
@@ -31,14 +31,14 @@ function OptionStylePack({
             alt=""
           />
         </StylingPackage>
-        <div>
-          <Button
+        <ButtonStylePackDiv>
+          <ButtonStylePack
             onClick={() => Select(setPack, listPack, setPricePack, 2)}
             style={pack === listPack[2].name ? styleClicked : {}}
           >
             O
-          </Button>
-          <Button
+          </ButtonStylePack>
+          <ButtonStylePack
             onClick={
               color === listColor[3].name
                 ? undefined
@@ -53,8 +53,8 @@ function OptionStylePack({
             }
           >
             X
-          </Button>
-        </div>
+          </ButtonStylePack>
+        </ButtonStylePackDiv>
       </OpenSection>
     </div>
   );

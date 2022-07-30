@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css"; // font
 import Header from "./components/commons/Header";
-import Footer from "./components/commons/Footer";
+// import Footer from "./components/commons/Footer";
 import Home from "./pages/Home";
 import Amg from "./pages/Amg";
 import SClass from "./pages/SClass";
@@ -22,7 +22,7 @@ function App() {
           <Route path="/claclass" element={<ClaClass />} />
           <Route path="/cclass" element={<CClass />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );

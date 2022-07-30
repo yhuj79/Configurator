@@ -12,10 +12,9 @@ function OptionColor({
   listPack,
   Select,
 }) {
-  function jsUcfirst(string) 
-{
+  function jsUcfirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
-}
+  }
   return (
     <div>
       <Title
@@ -66,17 +65,13 @@ function OptionColor({
             alt=""
           />
           <br />
-          {jsUcfirst(listColor[3].name)}
-          <span
-            style={
-              pack === listPack[2].name
-                ? { display: "none" }
-                : { fontSize: "12px" }
-            }
-          >
-            <br />
-            (스타일팩 전용)
-          </span>
+          <div>
+            {jsUcfirst(listColor[3].name)}
+            <span  className="span-stylepack" style={{ fontSize: "12px" }}>
+              <br />
+              (스타일팩 전용)
+            </span>
+          </div>
         </Button>
       </OpenSection>
     </div>

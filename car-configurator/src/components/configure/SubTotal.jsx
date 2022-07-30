@@ -118,5 +118,20 @@ const SubTotalDiv = styled.div`
     font-size: 23px;
     text-shadow: 2px 2px 2px gray;
   }
+
+  @media (max-width: 1260px) {
+    .sub-title {
+      font-size: 20px;
+    }
+    .sub-line-option {
+      font-size: 12px;
+    }
+    .sub-line-price {
+      font-size: 17px;
+    }
+    .sub-line-price-total {
+      font-size: 20px;
+    }
+  }
 `;
 export default SubTotal;
