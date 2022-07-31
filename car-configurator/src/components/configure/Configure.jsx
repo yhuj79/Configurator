@@ -68,7 +68,7 @@ function Configure({
 
   return (
     <ConfigureDiv>
-      <div>
+      <section className="Left Area in Configure">
         <SubTotal
           titleName={titleName}
           priceVanila={priceVanila}
@@ -94,7 +94,7 @@ function Configure({
             <InteriorFront cover={cover} trim={trim} steering={steering} />
           )}
         </div>
-      </div>
+      </section>
       <OptionDiv>
         <OptionStylePack
           open={open}
@@ -167,9 +167,9 @@ function Configure({
     </ConfigureDiv>
   );
 }
-const ConfigureDiv = styled.div`
+const ConfigureDiv = styled.main`
   display: flex;
-  margin: auto;
+  justify-content: center;
   font-size: 18px;
   background-color: #2b2b2b;
 `;

@@ -1,10 +1,13 @@
-import styled from "styled-components";
+import "./Interior.scss";
 
-function InteriorTwo({cover, trim, steering}) {
+function InteriorTwo({ cover, trim, steering }) {
   return (
-    <InteriorDiv style={{
-      backgroundImage: `url(${require(`./file/amg/amg-two-${cover}-${trim}-${steering}.webp`)})`,
-    }}>
+    <div
+      className="interior-div"
+      style={{
+        backgroundImage: `url(${require(`./file/amg/amg-two-${cover}-${trim}-${steering}.webp`)})`,
+      }}
+    >
       <div className="interior-img-div">
         <img
           className="interior-img-slider-stage"
@@ -12,28 +15,7 @@ function InteriorTwo({cover, trim, steering}) {
           src={require(`./file/source/CarSliderStage.png`)}
         />
       </div>
-    </InteriorDiv>
+    </div>
   );
 }
-const InteriorDiv = styled.div`
-  width: 100%;
-  margin: auto;
-  background-size: cover;
-  animation: AppearContent 0.8s;
-  animation-fill-mode: forwards;
-
-  @keyframes AppearContent {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .interior-img-slider-stage {
-    width: 100%;
-    opacity: 0;
-  }
-`;
 export default InteriorTwo;

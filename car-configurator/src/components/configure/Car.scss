@@ -1,0 +1,36 @@
+.car-div {
+    margin: auto;
+    background-size: cover;
+    animation: AppearContent 0.8s;
+    animation-fill-mode: forwards;
+    position: relative;
+
+    .car-img-title {
+        padding: 15px 25px;
+        text-shadow: 2px 2px 2px gray;
+    }
+
+    .car-img {
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+
+        animation: AppearCar 1.5s;
+        animation-fill-mode: forwards;
+    }
+
+    .car-img-slider-stage {
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+@keyframes AppearCar {
+    from {
+        transform: translateX(-250%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}

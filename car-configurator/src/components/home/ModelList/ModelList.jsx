@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import "./ModelList.scss";
 import Model from "./Model";
 
 function ModelList() {
 
   return (
-    <ModelListDiv>
+    <div className="model-list-div">
       <div className="model-list-section">
         <Model
           image={require("./img/Model_Amg.png")}
@@ -33,18 +33,7 @@ function ModelList() {
           animationDelay={1.3}
         />
       </div>
-    </ModelListDiv>
+    </div>
   );
 }
-const ModelListDiv = styled.div`
-  width: 80%;
-  margin: auto;
-  padding-bottom: 100px;
-  overflow-x: hidden;
-
-  .model-list-section {
-    display: flex;
-    position: relative;
-  }
-`;
 export default ModelList;

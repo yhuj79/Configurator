@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const OptionDiv = styled.div`
+export const OptionDiv = styled.section`
   min-width: 500px;
   max-width: 500px;
-  margin: 0 0 0 15px;
+  margin-left: 15px;
   color: white;
   font-weight: bold;
 

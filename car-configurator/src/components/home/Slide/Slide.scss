@@ -1,0 +1,25 @@
+.slide-div {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+
+    .slide-img {
+        width: 100%;
+        animation: AppearSlideImg 1s;
+    }
+
+    .none {
+        display: none;
+    }
+}
+
+@keyframes AppearSlideImg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

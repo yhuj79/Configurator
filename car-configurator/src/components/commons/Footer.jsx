@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import "./Footer.scss";
 import Logo from "../../assets/Logo.png";
 
 import Twitter from "@mui/icons-material/Twitter";
@@ -14,7 +14,7 @@ function Footer() {
   };
 
   return (
-    <FooterDiv>
+    <footer className="footer-div">
       <div className="footer-message">
         <p>
           This site is a project for practicing web development. Product Image
@@ -64,31 +64,7 @@ function Footer() {
           <YouTube sx={iconStyle} />
         </a>
       </div>
-    </FooterDiv>
+    </footer>
   );
 }
-const FooterDiv = styled.div`
-  background-color: #3b3b3b;
-  text-align: center;
-  padding: 50px 0 40px;
-
-  .footer-message {
-    width: 60%;
-    margin: auto;
-    opacity: 0.7;
-  }
-  .footer-img {
-    width: 60px;
-    filter: brightness(250%);
-    margin: 40px;
-  }
-  .footer-list {
-    display: flex;
-    justify-content: center;
-    opacity: 0.7;
-  }
-  .footer-list p {
-    margin: 0 50px 20px;
-  }
-`;
 export default Footer;

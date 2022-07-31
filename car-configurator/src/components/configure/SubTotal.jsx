@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import "./SubTotal.scss";
 
 function SubTotal({
   titleName,
@@ -11,7 +11,7 @@ function SubTotal({
   priceSteering,
 }) {
   return (
-    <SubTotalDiv>
+    <div className="subtotal-div">
       <div className="sub-section-one">
         <h1 className="sub-title">{titleName}</h1>
       </div>
@@ -74,64 +74,7 @@ function SubTotal({
           KRW
         </p>
       </div>
-    </SubTotalDiv>
+    </div>
   );
 }
-const SubTotalDiv = styled.div`
-  display: flex;
-  width: 95%;
-  height: 110px;
-  background-color: #3b3b3b;
-  margin: 20px auto;
-  padding: 15px;
-  border: 2px solid #939393;
-  border-radius: 10px;
-
-  .sub-section-one {
-    margin: auto;
-  }
-  .sub-section-two {
-    border-right: 2px solid white;
-    padding-right: 15px;
-  }
-  .sub-section-thr {
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-left: 15px;
-  }
-
-  .sub-title {
-    font-size: 30px;
-    text-shadow: 2px 2px 2px gray;
-  }
-  .sub-line-option {
-    font-size: 15px;
-    text-align: right;
-    opacity: 0.8;
-  }
-  .sub-line-price {
-    font-size: 20px;
-    text-align: right;
-    text-shadow: 2px 2px 2px gray;
-  }
-  .sub-line-price-total {
-    font-size: 23px;
-    text-shadow: 2px 2px 2px gray;
-  }
-
-  @media (max-width: 1260px) {
-    .sub-title {
-      font-size: 20px;
-    }
-    .sub-line-option {
-      font-size: 12px;
-    }
-    .sub-line-price {
-      font-size: 17px;
-    }
-    .sub-line-price-total {
-      font-size: 20px;
-    }
-  }
-`;
 export default SubTotal;

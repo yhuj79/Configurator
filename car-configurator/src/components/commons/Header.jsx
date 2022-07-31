@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import "./Header.scss";
 import Logo from "../../assets/Logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
@@ -13,7 +13,7 @@ function Header() {
   };
 
   return (
-    <HeaderDiv>
+    <header className="header-div">
       <div className="header-icon-div">
         <div className="header-icon">
           <MenuIcon sx={iconStyle} />
@@ -40,52 +40,7 @@ function Header() {
           <LanguageIcon sx={iconStyle} />
         </div>
       </div>
-    </HeaderDiv>
+    </header>
   );
 }
-
-const HeaderDiv = styled.div`
-  display: flex;
-  justify-content: space-around;
-  font-weight: lighter;
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  padding: 30px 0 30px 5px;
-  letter-spacing: 1px;
-  font-family: "Courier New", "Courier", "monospace";
-
-  .header-logo {
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    opacity: 0;
-    animation: AppearNormal 1.2s;
-    animation-delay: 1.6s;
-    animation-fill-mode: forwards;
-  }
-  .header-img {
-    width: 60px;
-    filter: brightness(250%);
-  }
-  .header-icon-div {
-    display: flex;
-    opacity: 0;
-    animation: AppearNormal 1.2s;
-    animation-delay: 1.6s;
-    animation-fill-mode: forwards;
-  }
-  .header-icon {
-    margin: 30px;
-  }
-
-  @keyframes AppearNormal {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-`;
 export default Header;

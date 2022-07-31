@@ -1,0 +1,40 @@
+.slide-text-div {
+    position: absolute;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    top: 5%;
+    left: 3%;
+
+    @mixin SlideText($delay, $Size) {
+        opacity: 0;
+        animation: AppearSlideTitle 1s;
+        animation-fill-mode: forwards;
+        animation-delay: $delay;
+        font-size: $Size;
+    }
+
+    .slide-text-one {
+        @include SlideText($delay: 0.3s, $Size: 35px);
+    }
+
+    .slide-text-two {
+        @include SlideText($delay: 0.8s, $Size: 45px);
+    }
+
+    .slide-text-mini {
+        @include SlideText($delay: 1.3s, $Size: 18px);
+    }
+}
+
+@keyframes AppearSlideTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

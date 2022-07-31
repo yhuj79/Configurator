@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import "./Slide.scss";
 import SlideImg from "./SlideImg";
 
 function Slide() {
@@ -8,7 +8,7 @@ function Slide() {
   useEffect(() => {
     const imageInterval = setInterval(() => {
       SlideRight();
-    }, 5000);
+    }, 7000);
     return () => {
       clearInterval(imageInterval);
     };
@@ -32,7 +32,7 @@ function Slide() {
   }
 
   return (
-    <SlideDiv>
+    <div className="slide-div">
       <div className={imgNum === 1 ? "slide-img" : "none"}>
         <SlideImg
           src="Amg"
@@ -65,30 +65,7 @@ function Slide() {
       </div>
       <button onClick={() => SlideLeft()}>{"<"}</button>
       <button onClick={() => SlideRight()}>{">"}</button>
-    </SlideDiv>
+    </div>
   );
 }
-const SlideDiv = styled.div`
-  position: relative;
-  width: 80%;
-  margin: auto;
-  margin-bottom: 30px;
-
-  .slide-img {
-    width: 100%;
-    animation: AppearSlideImg 0.8s;
-  }
-  .none {
-    display: none;
-  }
-
-  @keyframes AppearSlideImg {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-`;
 export default Slide;

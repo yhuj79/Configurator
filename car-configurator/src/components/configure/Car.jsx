@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import "./Car.scss";
 import { useState, useRef, useEffect } from "react";
 
 function Car({ name, pack, color, wheel }) {
@@ -70,61 +70,28 @@ function Car({ name, pack, color, wheel }) {
   );
 
   return (
-    <CarDiv
+    <div
+      className="car-div"
       style={{
         backgroundImage: `url(${require("./file/source/CarBackground.png")})`,
       }}
     >
-        <img
-          className="car-img"
-          alt=""
-          ref={imgRef}
-          onMouseDown={onDragStart}
-          onMouseMove={onDragMove}
-          onMouseUp={onDragEnd}
-          onMouseLeave={onDragEnd}
-          src={require(`./file/${name}/${name}-${pack}-${color}-${wheel}-${degree}.webp`)}
-        />
-        <img
-          className="car-img-slider-stage"
-          alt=""
-          src={require(`./file/source/CarSliderStage.png`)}
-        />
-    </CarDiv>
+      <img
+        className="car-img"
+        alt=""
+        ref={imgRef}
+        onMouseDown={onDragStart}
+        onMouseMove={onDragMove}
+        onMouseUp={onDragEnd}
+        onMouseLeave={onDragEnd}
+        src={require(`./file/${name}/${name}-${pack}-${color}-${wheel}-${degree}.webp`)}
+      />
+      <img
+        className="car-img-slider-stage"
+        alt=""
+        src={require(`./file/source/CarSliderStage.png`)}
+      />
+    </div>
   );
 }
-const CarDiv = styled.div`
-  width: 100%;
-  margin: auto;
-  background-size: cover;
-  animation: AppearContent 0.8s;
-  animation-fill-mode: forwards;
-  position: relative;
-
-  .car-img-title {
-    padding: 15px 25px;
-    text-shadow: 2px 2px 2px gray;
-  }
-  .car-img {
-    position: absolute;
-    width: 100%;
-    z-index: 100;
-
-    animation: AppearCar 1.5s;
-    animation-fill-mode: forwards;
-
-    @keyframes AppearCar {
-      from {
-        transform: translateX(-250%);
-      }
-      to {
-        transform: translateX(0);
-      }
-    }
-  }
-  .car-img-slider-stage {
-    width: 100%;
-    z-index: 1;
-  }
-`;
 export default Car;
